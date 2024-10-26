@@ -1,11 +1,10 @@
 # Трекер привычек
 приложение направленное на создание новых (полезных) привычек и искоренение старых (плохих)
 
+
 ## Содержание
 - [Технологии](#технологии)
 - [Использование](#начало-работы)
-- [Разработка](#тестирование)
-- [Тестирование](#deploy-и-ci/cd)
 
 ## Технологии
 - [Django](https://www.djangoproject.com/)
@@ -15,40 +14,11 @@
 - [requests](https://pypi.org/project/requests/)
 
 ## Использование
-
-планировщик и worker celery
+сборка и запуск
 ```sh
-$ celery -A config worker -l INFO
+$ docker-compose up -d --build
 ```
+остановка
 ```sh
-$ celery -A config beat -l info -s django
-```
-
-## Разработка
-
-### Установка зависимостей
-Для установки зависимостей, выполните команду:
-```sh
-$ poetry install
-```
-
-### Запуск Development сервера
-Чтобы запустить сервер для разработки, выполните команду:
-```sh
-$ python3 manage.py runserver
-```
-
-
-## Тестирование
-
-Наш проект покрыт тестами. Для их запуска выполните команду:
-```sh
-$ python3 manage.py test
-```
-Для просмотра покрытия тестами:
-```sh
-$ coverage run --source='.' manage.py test
-```
-```sh
-$ coverage report
+$ docker-compose down
 ```
